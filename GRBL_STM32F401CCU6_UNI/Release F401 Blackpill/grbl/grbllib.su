@@ -1,4 +1,0 @@
-../grbl/grbllib.c:76:6:dummy_bool_handler	0	static
-../grbl/grbllib.c:81:13:dummy_irq_claim	0	static
-../grbl/grbllib.c:86:13:report_driver_error	48	static
-../grbl/grbllib.c:100:5:grbl_enter	32	static

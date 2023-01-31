@@ -1,4 +1,0 @@
-../grbl/ioports.c:34:16:ioports_count	24	static
-../grbl/ioports.c:53:9:ioports_available	16	static
-../grbl/ioports.c:87:6:ioport_claim	40	static
-../grbl/ioports.c:125:6:ioport_can_claim_explicit	0	static

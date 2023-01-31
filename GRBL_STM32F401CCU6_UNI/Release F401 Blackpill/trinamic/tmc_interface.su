@@ -1,4 +1,0 @@
-../trinamic/tmc_interface.c:44:40:tmc_spi_write	8	static
-../trinamic/tmc_interface.c:49:40:tmc_spi_read	8	static
-../trinamic/tmc_interface.c:54:28:tmc_uart_write	8	static
-../trinamic/tmc_interface.c:58:50:tmc_uart_read	8	static

@@ -1,5 +1,0 @@
-../spindle/select.c:36:21:check	0	static
-../spindle/select.c:83:13:report_options	16	static
-../spindle/select.c:41:22:validate	16	static
-../spindle/select.c:72:13:execute	8	static
-../spindle/select.c:113:6:spindle_select_init	8	static

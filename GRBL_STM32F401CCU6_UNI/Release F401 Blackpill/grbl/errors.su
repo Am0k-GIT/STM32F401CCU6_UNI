@@ -1,2 +1,0 @@
-../grbl/errors.c:105:6:errors_register	0	static
-../grbl/errors.c:111:18:errors_get_details	0	static

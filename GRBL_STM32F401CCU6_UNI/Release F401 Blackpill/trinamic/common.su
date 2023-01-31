@@ -1,6 +1,0 @@
-../trinamic/common.c:44:6:tmc_microsteps_validate	0	static
-../trinamic/common.c:57:9:tmc_microsteps_to_mres	0	static
-../trinamic/common.c:71:10:tmc_calc_tstep	0	static
-../trinamic/common.c:78:7:tmc_calc_tstep_inv	0	static
-../trinamic/common.c:83:6:tmc_motors_set	0	static
-../trinamic/common.c:88:9:tmc_motors_get	0	static

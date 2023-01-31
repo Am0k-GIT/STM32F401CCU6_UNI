@@ -1,5 +1,0 @@
-../trinamic/tmc26x.c:94:6:TMC26X_SetDefaults	12	static
-../trinamic/tmc26x.c:124:6:TMC26X_SetCurrent	24	static
-../trinamic/tmc26x.c:151:6:TMC26X_SetMicrosteps	0	static
-../trinamic/tmc26x.c:170:6:TMC26X_SetConstantOffTimeChopper	12	static
-../trinamic/tmc26x.c:99:6:TMC26X_Init	24	static

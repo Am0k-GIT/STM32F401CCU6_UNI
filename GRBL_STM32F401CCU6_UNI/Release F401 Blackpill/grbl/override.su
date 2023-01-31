@@ -1,5 +1,0 @@
-../grbl/override.c:35:15:enqueue_feed_override	0	static
-../grbl/override.c:46:9:get_feed_override	0	static
-../grbl/override.c:59:15:enqueue_accessory_override	0	static
-../grbl/override.c:70:9:get_accessory_override	0	static
-../grbl/override.c:83:6:flush_override_buffers	0	static

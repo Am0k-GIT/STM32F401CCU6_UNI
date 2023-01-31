@@ -1,2 +1,0 @@
-../grbl/coolant_control.c:35:6:coolant_set_state	8	static
-../grbl/coolant_control.c:46:6:coolant_sync	16	static

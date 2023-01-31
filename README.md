@@ -16,7 +16,7 @@
 
 ## Marlin 2.1.2
 
-Плата поддерживает и протестированна с прошивкой на базе <a href="https://marlinfw.org/meta/download/Marlin">Marlin</a> 2.1.2. В репозитории вы можете найти как сами исходники прошивки под самосборную кинематику Core-XY, так и инструкцию по модицикации оригинальных исходников <a href="https://marlinfw.org/meta/download/Marlin">Marlin</a>. Для компиляции использовался <a href="https://code.visualstudio.com">Visual Studio Code</a> с установленным PlatformIO, перед сборкой выбираем окружение [env:blackpill_f401cc_env].
+Плата поддерживает и протестированна с прошивкой на базе <a href="https://github.com/MarlinFirmware/Marlin">Marlin</a> 2.1.2. В репозитории вы можете найти как сами исходники прошивки под самосборную кинематику Core-XY, так и инструкцию по модицикации оригинальных исходников <a href="https://github.com/MarlinFirmware/Marlin">Marlin</a>. Для компиляции использовался <a href="https://code.visualstudio.com">Visual Studio Code</a> с установленным PlatformIO, перед сборкой выбираем окружение [env:blackpill_f401cc_env].
 
 ## GRBL 1.1f
 
@@ -36,7 +36,7 @@
 ## Особенности
 
 Схему печатной платы, а так же гербер-файлы, необходимые для ее производства, вы найдете в репозитории.
-<img src="images/Schematic_STM30F401CCU6_UNI.png"/>
+<img src="images/Schematic_STM32F401CCU6_UNI.png"/>
 Из особенностей следует отметить:
 - Это минималистичная плата на основе современного и дешевого 32-битного МК STM32F401CCU6, для интеграции в нее подойдет
 отладочная плата от WeAct, известная как BlackPill. Она дешевле и производительнее отладочных плат, основанных на
