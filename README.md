@@ -35,8 +35,8 @@
  * <a href="https://www.st.com/en/development-tools/stm32cubeprog.html">STM32 Cube Programmer</a>
 
 <p align="center">
-  <img src="images/board_top.svg" height="300"/>
-  <img src="images/board_bot.svg" height="300"/>
+  <img src="images/board_top.png" height="400"/>
+  <img src="images/board_bot.png" height="400"/>
 </p>
 
 ## Особенности
