@@ -34,9 +34,14 @@
  * <a href="https://www.st.com/en/development-tools/stsw-stm32080.html">DfuSe USB device firmware upgrade</a>
  * <a href="https://www.st.com/en/development-tools/stm32cubeprog.html">STM32 Cube Programmer</a>
 
+## Внешний вид
 <p align="center">
   <img src="images/board_top.png" height="400"/>
   <img src="images/board_bot.png" height="400"/>
+</p>
+<p align="center">
+  <img src="images/board_top_ready.jpg" height="400"/>
+  <img src="images/board_bot_ready.jpg" height="400"/>
 </p>
 
 ## Особенности
