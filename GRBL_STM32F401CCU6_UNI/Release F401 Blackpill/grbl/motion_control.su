@@ -1,0 +1,13 @@
+../grbl/motion_control.c:405:21:eval_bezier	0	static
+../grbl/motion_control.c:95:6:mc_line	16	static
+../grbl/motion_control.c:227:6:mc_arc	160	static
+../grbl/motion_control.c:465:6:mc_cubic_b_spline	96	static
+../grbl/motion_control.c:658:6:mc_thread	80	static
+../grbl/motion_control.c:776:15:mc_jog_execute	16	static
+../grbl/motion_control.c:806:6:mc_dwell	16	static
+../grbl/motion_control.c:555:6:mc_canned_drill	72	static
+../grbl/motion_control.c:958:12:mc_probe_cycle	64	static
+../grbl/motion_control.c:1062:6:mc_parking_motion	16	static
+../grbl/motion_control.c:1080:6:mc_override_ctrl_update	8	static
+../grbl/motion_control.c:1093:15:mc_reset	16	static
+../grbl/motion_control.c:817:15:mc_homing_cycle	48	static

@@ -1,0 +1,15 @@
+../grbl/gcode.c:378:22:init_sync_motion	16	static
+../grbl/gcode.c:357:13:add_output_command.constprop.isra	8	static
+../grbl/gcode.c:154:17:gc_get_state	0	static
+../grbl/gcode.c:177:8:gc_get_scaling	0	static
+../grbl/gcode.c:182:16:gc_get_g51_state	0	static
+../grbl/gcode.c:159:13:set_scaling.constprop	8	static
+../grbl/gcode.c:197:7:gc_get_offset	0	static
+../grbl/gcode.c:207:6:gc_set_tool_offset	12	static
+../grbl/gcode.c:248:10:gc_get_plane_data	0	static
+../grbl/gcode.c:273:6:gc_init	32	static
+../grbl/gcode.c:330:6:gc_laser_ppi_enable	8	static
+../grbl/gcode.c:337:6:gc_spindle_off	8	static
+../grbl/gcode.c:349:6:gc_coolant_off	8	static
+../grbl/gcode.c:407:7:gc_normalize_block	48	static
+../grbl/gcode.c:521:15:gc_execute_block	216	static

@@ -1,0 +1,2 @@
+../grbl/alarms.c:57:6:alarms_register	0	static
+../grbl/alarms.c:63:18:alarms_get_details	0	static
