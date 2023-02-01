@@ -26,8 +26,8 @@
  * A3  RESET (EXP 1-04)         | B3  Spindle PWM MOSFET          | C3  (N/A)
  * A4  (EXP 2-07) SS            | B4  Y Direction                 | C4  (N/A)
  * A5  (EXP 2-09) SCK           | B5  Y Step                      | C5  (N/A)
- * A6  (EXP 2-10) MISO          | B6  STOP (EXP 1- 8) SCL         | C6  (N/A)
- * A7  (EXP 2-05) MOSI          | B7  START (EXP 1- 6) SCK        | C7  (N/A)
+ * A6  AUX0 (EXP 2-10) MISO     | B6  STOP (EXP 1- 8) SCL         | C6  (N/A)
+ * A7  AUX1 (EXP 2-05) MOSI     | B7  START (EXP 1- 6) SCK        | C7  (N/A)
  * A8  Step En/Dis              | B8  X Direction                 | C8  (N/A)
  * A9  FLOOD MOSFET             | B9  X Step                      | C9  (N/A)
  * A10 MOSFET                   | B10 Y Limit                     | C10 (N/A)
@@ -42,9 +42,7 @@
 #error "Axis configuration is not supported!"
 #endif
 
-#define BOARD_NAME "BlackPill"
-//#undef SPINDLE_SYNC_ENABLE
-//#define SPINDLE_SYNC_ENABLE 1
+#define BOARD_NAME "STM32F401CCU6_UNI"
 
 // Define step pulse output pins.
 #define STEP_PORT               GPIOB
@@ -136,20 +134,15 @@
 #endif
 
 #if N_ABC_MOTORS == 0
+
 #define HAS_IOPORTS
-#if !SAFETY_DOOR_ENABLE
+
+#endif
+
 #define AUXINPUT0_PORT          GPIOA
 #define AUXINPUT0_PIN           6
 #define AUXOUTPUT1_PORT         GPIOA
-#define AUXOUTPUT1_PIN          6
-#else
-#define AUXINPUT0_PORT          GPIOA
-#define AUXINPUT0_PIN           6
-#endif
-#define AUXOUTPUT0_PORT         GPIOA
-#define AUXOUTPUT0_PIN          7
-#endif
-
+#define AUXOUTPUT1_PIN          7
 
 // NOT SUPPORTED
 #if KEYPAD_ENABLE
