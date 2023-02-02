@@ -1,14 +1,18 @@
 ## Конфигурирование GRBL HAL для работы с платой STM32F401CCU6_UNI
 
-Добавляем файл определения пинов: `..\Inc\blackpill_map.h`
+Рекомендуется использовать модицикацию последней стабильной версии оригинальной прошивки.
+Готовая прошивка предлагается как пример, где можно подсмотреть настройки концевиков и прочего,
+она созданна для конкретной физической машины с ее особенностями.
 
-В файлe `..\Inc\my_machine.h` проверяем определение:
+1.	Добавляем файл определения пинов: `..\Inc\blackpill_map.h`
+
+2.	В файлe `..\Inc\my_machine.h` проверяем определение:
 
 ```C
 #define BOARD_BLACKPILL
 ```
 
-В файл `..\platformio.ini` добавляем определение окружения:
+3.	В файл `..\platformio.ini` добавляем определение окружения:
 
 ```C
 [env:blackpill_f401cc]
@@ -27,13 +31,13 @@ lib_extra_dirs = ${common.lib_extra_dirs}
 upload_protocol = dfu 
 ```
 
-Добавляем в файл `..\grbl\config.h` после строки `#define _GRBL_CONFIG_H_`:
+4.	Добавляем в файл `..\grbl\config.h` после строки `#define _GRBL_CONFIG_H_`:
 
 ```C
 #include "STM32F401CCU6_cfg.h"
 ```
 
-Создаем файл `..\grbl\STM32F401CCU6_cfg.h` внеся необходимые изменения:
+5.	Создаем файл `..\grbl\STM32F401CCU6_cfg.h` внеся необходимые изменения:
 
 ```C
 #define N_AXIS                                             4
@@ -88,9 +92,10 @@ upload_protocol = dfu
 #define HOMING_SINGLE_AXIS_COMMANDS                      Off          //$22 (bit 1)
 #define DEFAULT_HOMING_INIT_LOCK                          On          //$22 (bit 2)
 #define HOMING_FORCE_SET_ORIGIN                          Off          //$22 (bit 3)
-#define DEFAULT_HOMING_ALLOW_MANUAL                       On          //$22 (bit 4)
-#define DEFAULT_HOMING_OVERRIDE_LOCKS                     On          //$22 (bit 5)
-#define DEFAULT_HOMING_KEEP_STATUS_ON_RESET              Off          //$22 (bit 6)
+#define DEFAULT_LIMITS_TWO_SWITCHES_ON_AXES              Off          //$22 (bit 4)
+#define DEFAULT_HOMING_ALLOW_MANUAL                       On          //$22 (bit 5)
+#define DEFAULT_HOMING_OVERRIDE_LOCKS                     On          //$22 (bit 6)
+#define DEFAULT_HOMING_KEEP_STATUS_ON_RESET              Off          //$22 (bit 7)
 #define DEFAULT_HOMING_DIR_MASK                   0b00000111          //$23
 #define DEFAULT_HOMING_FEED_RATE                       25.0f          //$24
 #define DEFAULT_HOMING_SEEK_RATE                      300.0f          //$25
@@ -162,6 +167,6 @@ upload_protocol = dfu
 #define DEFAULT_TIMEZONE_OFFSET                         0.0f          //$482
 ```
 
-Прошиваем выбрав окружение `env:blackpill_f401cc`. 
+6.	Прошиваем выбрав окружение `env:blackpill_f401cc`. 
 После прошивки и запуска GRBL стираем и восстанавливает настройки до значений по умолчанию командой `$RST=$`.
 Проверяем настройки командой `$$`.

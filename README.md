@@ -20,7 +20,7 @@
 В репозитории вы можете найти как сами исходники прошивки под самосборную кинематику Core-XY, так и инструкцию по модицикации 
 оригинальных исходников. 
 Для компиляции использовался <a href="https://code.visualstudio.com">Visual Studio Code</a> с 
-установленным PlatformIO, перед сборкой выбираем окружение [env:blackpill_f401cc_env].
+установленным PlatformIO, перед сборкой выбираем окружение `env:blackpill_f401cc`.
 
 ## GRBL 1.1f
 
@@ -28,8 +28,8 @@
 В репозитории вы можете как сами исходники прошивки под самосборную 4-осевую кинематику (3 осевой фрезер + поворотная ось),
 так и инструкцию по модицикации оригинальных исходников.
 Для компиляции использовался <a href="https://code.visualstudio.com">Visual Studio Code</a> с 
-установленным PlatformIO, перед сборкой выбираем окружение [env:blackpill_f401cc]. Так же может быть использован 
-<a href="https://www.st.com/en/development-tools/stm32cubeide.html">STM32 Cube IDE</a> в режиме [Build:Release F401 Blackpill].
+установленным PlatformIO, перед сборкой выбираем окружение `env:blackpill_f401cc`. Так же может быть использован 
+<a href="https://www.st.com/en/development-tools/stm32cubeide.html">STM32 Cube IDE</a> в режиме `Build:Release F401 Blackpill`.
 
 ## Дополнительное ПО
 

@@ -50,9 +50,10 @@
 #define HOMING_SINGLE_AXIS_COMMANDS                      Off          //$22 (bit 1)
 #define DEFAULT_HOMING_INIT_LOCK                          On          //$22 (bit 2)
 #define HOMING_FORCE_SET_ORIGIN                          Off          //$22 (bit 3)
-#define DEFAULT_HOMING_ALLOW_MANUAL                       On          //$22 (bit 4)
-#define DEFAULT_HOMING_OVERRIDE_LOCKS                     On          //$22 (bit 5)
-#define DEFAULT_HOMING_KEEP_STATUS_ON_RESET              Off          //$22 (bit 6)
+#define DEFAULT_LIMITS_TWO_SWITCHES_ON_AXES              Off          //$22 (bit 4)
+#define DEFAULT_HOMING_ALLOW_MANUAL                       On          //$22 (bit 5)
+#define DEFAULT_HOMING_OVERRIDE_LOCKS                     On          //$22 (bit 6)
+#define DEFAULT_HOMING_KEEP_STATUS_ON_RESET              Off          //$22 (bit 7)
 #define DEFAULT_HOMING_DIR_MASK                   0b00000111          //$23
 #define DEFAULT_HOMING_FEED_RATE                       25.0f          //$24
 #define DEFAULT_HOMING_SEEK_RATE                      300.0f          //$25
