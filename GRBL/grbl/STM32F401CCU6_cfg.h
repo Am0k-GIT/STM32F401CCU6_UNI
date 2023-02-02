@@ -1,41 +1,3 @@
-## Конфигурирование GRBL HAL для работы с платой STM32F401CCU6_UNI
-
-Добавляем файл определения пинов: `..\Inc\blackpill_map.h`
-
-В файлe `..\Inc\my_machine.h` проверяем определение:
-
-```C
-#define BOARD_BLACKPILL
-```
-
-В файл `..\platformio.ini` добавляем определение окружения:
-
-```C
-[env:blackpill_f401cc]
-board = blackpill_f401cc
-board_build.ldscript = STM32F401CCUX_FLASH.ld
-build_flags = ${common.build_flags}
-  # See Inc/my_machine.h for options
-  -D BOARD_BLACKPILL=
-  -D USB_SERIAL_CDC=1 
-  # Uncomment to enable Spindle PWM output on the SpinDir pin
-  #-D PROTONEER_SPINDLE_PWM=
-lib_deps = ${common.lib_deps}
-lib_extra_dirs = ${common.lib_extra_dirs}
-# Alternatively, place the .pio/build/<env name>/firmware.bin on the NODE_F4xxRE drive
-; change MCU frequency
-upload_protocol = dfu 
-```
-
-Добавляем в файл `..\grbl\config.h` после строки `#define _GRBL_CONFIG_H_`:
-
-```C
-#include "STM32F401CCU6_cfg.h"
-```
-
-Создаем файл `..\grbl\STM32F401CCU6_cfg.h` внеся необходимые изменения:
-
-```C
 #define N_AXIS                                             4
 #define N_SPINDLE                                          1
 #define BUILD_INFO                               "Am0k .cfg"
@@ -160,8 +122,3 @@ upload_protocol = dfu
 #define DEFAULT_PLANNER_BUFFER_BLOCKS                     35          //$398
 #define DEFAULT_AUTOREPORT_INTERVAL                        0          //$481
 #define DEFAULT_TIMEZONE_OFFSET                         0.0f          //$482
-```
-
-Прошиваем выбрав окружение `env:blackpill_f401cc`. 
-После прошивки и запуска GRBL стираем и восстанавливает настройки до значений по умолчанию командой `$RST=$`.
-Проверяем настройки командой `$$`.
