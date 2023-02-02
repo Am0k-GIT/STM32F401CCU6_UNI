@@ -18,15 +18,18 @@
 
 Плата поддерживает и протестированна с прошивкой на базе <a href="https://github.com/MarlinFirmware/Marlin">Marlin</a> 2.1.2. 
 В репозитории вы можете найти как сами исходники прошивки под самосборную кинематику Core-XY, так и инструкцию по модицикации 
-оригинальных исходников. Для компиляции использовался <a href="https://code.visualstudio.com">Visual Studio Code</a> с 
+оригинальных исходников. 
+Для компиляции использовался <a href="https://code.visualstudio.com">Visual Studio Code</a> с 
 установленным PlatformIO, перед сборкой выбираем окружение [env:blackpill_f401cc_env].
 
 ## GRBL 1.1f
 
 Плата поддерживает и протестированна с прошивкой на базе <a href="https://github.com/grblHAL/STM32F4xx">GRBL HAL Driver</a>. 
-В репозитории вы можете сами исходники прошивки под самосборную 4-осевую кинематику (3 осевой фрезер + поворотная ось). 
-Для компиляции использовался <a href="https://www.st.com/en/development-tools/stm32cubeide.html">STM32 Cube IDE</a> в 
-режиме [Build:Release F401 Blackpill]. Работы по улучшению переносимости платы в обновленные версии прошивки ведутся.
+В репозитории вы можете как сами исходники прошивки под самосборную 4-осевую кинематику (3 осевой фрезер + поворотная ось),
+так и инструкцию по модицикации оригинальных исходников.
+Для компиляции использовался <a href="https://code.visualstudio.com">Visual Studio Code</a> с 
+установленным PlatformIO, перед сборкой выбираем окружение [env:blackpill_f401cc]. Так же может быть использован 
+<a href="https://www.st.com/en/development-tools/stm32cubeide.html">STM32 Cube IDE</a> в режиме [Build:Release F401 Blackpill].
 
 ## Дополнительное ПО
 
