@@ -1,5 +1,5 @@
 /*
-  blackpill_map.h - driver code for STM32F4xx (Blackpill) breakout board
+stm32f401_uni_map.h - driver code for STM32F401CCU6 (Blackpill) breakout board
 
   Part of GrblHAL
 
@@ -42,7 +42,7 @@
 #error "Axis configuration is not supported!"
 #endif
 
-#define BOARD_NAME "STM32F401CCU6_UNI"
+#define BOARD_NAME "STM32F401_UNI"
 
 // Define step pulse output pins.
 #define STEP_PORT               GPIOB

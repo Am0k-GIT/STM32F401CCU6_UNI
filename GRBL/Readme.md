@@ -4,26 +4,31 @@
 Готовая прошивка предлагается как пример, где можно подсмотреть настройки концевиков и прочего,
 она созданна для конкретной физической машины с ее особенностями.
 
-1.	Добавляем файл определения пинов: `..\Inc\blackpill_map.h`
+1.	Добавляем файл определения пинов: `..\Inc\stm32f401_uni_map`
 
-2.	В файлe `..\Inc\my_machine.h` проверяем определение:
+2.	В файлe `..\Inc\my_machine.h` добавляем определение:
 
 ```C
-#define BOARD_BLACKPILL
+#define BOARD_STM32F401_UNI   // F401 CNC board
 ```
 
-3.	В файл `..\platformio.ini` добавляем определение окружения:
+3.  Прописываем привязку платы к файлу определения пинов в файле `..\Inc\driver.h`:
 
 ```C
-[env:blackpill_f401cc]
+#elif defined(BOARD_STM32F401_UNI)
+  #include "stm32f401_uni_map.h"
+```
+
+4.	В файл `..\platformio.ini` добавляем определение окружения:
+
+```C
+[env:blackpill_f401cc_uni]
 board = blackpill_f401cc
 board_build.ldscript = STM32F401CCUX_FLASH.ld
 build_flags = ${common.build_flags}
   # See Inc/my_machine.h for options
-  -D BOARD_BLACKPILL=
-  -D USB_SERIAL_CDC=1 
-  # Uncomment to enable Spindle PWM output on the SpinDir pin
-  #-D PROTONEER_SPINDLE_PWM=
+  -D BOARD_STM32F401_UNI=
+  -D USB_SERIAL_CDC=1
 lib_deps = ${common.lib_deps}
 lib_extra_dirs = ${common.lib_extra_dirs}
 # Alternatively, place the .pio/build/<env name>/firmware.bin on the NODE_F4xxRE drive
@@ -167,6 +172,6 @@ upload_protocol = dfu
 #define DEFAULT_TIMEZONE_OFFSET                         0.0f          //$482
 ```
 
-6.	Прошиваем выбрав окружение `env:blackpill_f401cc`. 
+6.	Прошиваем выбрав окружение `env:blackpill_f401cc_uni`. 
 После прошивки и запуска GRBL стираем и восстанавливает настройки до значений по умолчанию командой `$RST=$`.
 Проверяем настройки командой `$$`.
