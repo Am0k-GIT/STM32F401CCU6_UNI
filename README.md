@@ -8,10 +8,6 @@
 
 <h1 align="center">STM32F401CCU6 UNI CNC board</h1>
 
-<p align="center">
-    <a href="/LICENSE"><img alt="GPL-V3.0 License" src="https://img.shields.io/github/license/marlinfirmware/marlin.svg"></a>
-</p>
-
 Проект открытой управляющей платы ЧПУ на основе МК STM32F401CCU6. Разработана для работы под управление прошивок Marlin и GRBL.
 
 ## Marlin 2.1.2.
