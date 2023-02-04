@@ -1,48 +1,20 @@
 ## Конфигурирование GRBL HAL для работы с платой STM32F401CCU6_UNI
 
-Рекомендуется использовать модицикацию последней стабильной версии оригинальной прошивки.
+Плата официально поддерживается и добавлена в оригинальную прошивку, поэтому
+рекомендуется использовать последнюю стабильную версию оригинальной прошивки 
+<a href="https://github.com/grblHAL/STM32F4xx">GRBL HAL</a>.
 Готовая прошивка предлагается как пример, где можно подсмотреть настройки концевиков и прочего,
 она созданна для конкретной физической машины с ее особенностями.
 
-1.	Добавляем файл определения пинов: `..\Inc\stm32f401_uni_map`
+Если хотите облегчить редактирование настроек по умолчанию, выполните следующие два шага:
 
-2.	В файлe `..\Inc\my_machine.h` добавляем определение:
-
-```C
-#define BOARD_STM32F401_UNI   // F401 CNC board
-```
-
-3.  Прописываем привязку платы к файлу определения пинов в файле `..\Inc\driver.h`:
-
-```C
-#elif defined(BOARD_STM32F401_UNI)
-  #include "stm32f401_uni_map.h"
-```
-
-4.	В файл `..\platformio.ini` добавляем определение окружения:
-
-```C
-[env:blackpill_f401cc_uni]
-board = blackpill_f401cc
-board_build.ldscript = STM32F401CCUX_FLASH.ld
-build_flags = ${common.build_flags}
-  # See Inc/my_machine.h for options
-  -D BOARD_STM32F401_UNI=
-  -D USB_SERIAL_CDC=1
-lib_deps = ${common.lib_deps}
-lib_extra_dirs = ${common.lib_extra_dirs}
-# Alternatively, place the .pio/build/<env name>/firmware.bin on the NODE_F4xxRE drive
-; change MCU frequency
-upload_protocol = dfu 
-```
-
-4.	Добавляем в файл `..\grbl\config.h` после строки `#define _GRBL_CONFIG_H_`:
+1.	Добавляем в файл `..\grbl\config.h` после строки `#define _GRBL_CONFIG_H_`:
 
 ```C
 #include "STM32F401CCU6_cfg.h"
 ```
 
-5.	Создаем файл `..\grbl\STM32F401CCU6_cfg.h` внеся необходимые изменения:
+2.	Создаем файл `..\grbl\STM32F401CCU6_cfg.h` внеся необходимые изменения:
 
 ```C
 #define N_AXIS                                             4
@@ -172,6 +144,8 @@ upload_protocol = dfu
 #define DEFAULT_TIMEZONE_OFFSET                         0.0f          //$482
 ```
 
-6.	Прошиваем выбрав окружение `env:blackpill_f401cc_uni`. 
+Плата прошивается выбрав в PlatformIO окружение `env:blackpill_f401cc_uni`. 
+Дополнительно выбирать плату в файле `..\Inc\my_machine.h` не требуется, оригинальный файл настроек PlatformIO
+перезапишет плату исходя из выбранного окружения.
 После прошивки и запуска GRBL стираем и восстанавливает настройки до значений по умолчанию командой `$RST=$`.
 Проверяем настройки командой `$$`.
