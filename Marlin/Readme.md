@@ -35,7 +35,7 @@
 #
 # blackpill_f401cc
 #
-[env:blackpill_f401cc]
+[env:blackpill_f401cc_uni]
 platform             = ststm32
 extends              = common_stm32
 board                 = blackpill_f401cc
@@ -47,7 +47,7 @@ monitor_speed        = 250000
 upload_protocol      = dfu
 ```
 
-6.	Прошиваем выбрав окружение `env:blackpill_f401cc`.
+6.	Прошиваем выбрав окружение `env:blackpill_f401cc_uni`.
 
 После прошивки не забываем сбросить настройки EEPROM командой `M502` и сохранить их вновь командой `M500`.
 
