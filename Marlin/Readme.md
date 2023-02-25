@@ -9,7 +9,7 @@
 2.	Добавляем в файл `..\Marlin\src\pins\pins.h`:
 
 ```C
-#elif MB(STM32F401CCU6)
+#elif MB(STM32F401CCU6_UNI)
   #include "stm32f4/pins_STM32F401CCU6_UNI.h"       // STM32F4                                env:blackpill_f401cc_uni
 ```
 
@@ -110,4 +110,5 @@ constexpr temp_entry_t temptable_59[] PROGMEM = {
 
 ```C
 #define TEMP_SENSOR_0 59
-```C
+```
+
