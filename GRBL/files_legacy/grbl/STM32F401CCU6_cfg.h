@@ -1,25 +1,3 @@
-## Конфигурирование GRBL HAL для работы с платой STM32F401CCU6_UNI
-
-Плата официально поддерживается и добавлена в оригинальную прошивку, поэтому
-рекомендуется использовать последнюю стабильную версию оригинальной прошивки 
-<a href="https://github.com/grblHAL/STM32F4xx">GRBL HAL</a>.
-Готовая прошивка предлагается как пример, где можно подсмотреть настройки концевиков и прочего,
-она созданна для конкретной физической машины с ее особенностями.
-
-Обратите внимание, что для работы прошивки пин МК A3 (RESET для GRBL) (EXP1 - 4) должен быть подключен 
-через нормально-замкнутую кнопку к земле. Это кнопка Emergency Stop.
-
-Если хотите облегчить редактирование настроек по умолчанию, выполните следующие два шага:
-
-1.	Добавляем в файл `..\grbl\config.h` после строки `#define _GRBL_CONFIG_H_`:
-
-```C
-#include "STM32F401CCU6_cfg.h"
-```
-
-2.	Создаем файл `..\grbl\STM32F401CCU6_cfg.h` внеся необходимые изменения:
-
-```C
 #define N_AXIS                                             4
 #define N_SPINDLE                                          1
 #define BUILD_INFO                               "Am0k .cfg"
@@ -27,10 +5,10 @@
 //#define WALL_PLOTTER
 //#define COREXY
 #define ACCELERATION_TICKS_PER_SECOND                    100
-#define REPORT_ECHO_LINE_RECEIVED                        Off
-#define TOOL_LENGTH_OFFSET_AXIS                           -1
-#define MINIMUM_JUNCTION_SPEED                          0.0f
-#define MINIMUM_FEED_RATE                               1.0f
+#define REPORT_ECHO_LINE_RECEIVED                        Off 
+#define TOOL_LENGTH_OFFSET_AXIS                           -1 
+#define MINIMUM_JUNCTION_SPEED                          0.0f 
+#define MINIMUM_FEED_RATE                               1.0f 
 #define N_ARC_CORRECTION                                  12
 #define SEGMENT_BUFFER_SIZE                               10
 
@@ -44,8 +22,8 @@
 #define DEFAULT_SPINDLE_ENABLE_OFF_WITH_ZERO_SPEED        On          //$9
 #define DEFAULT_REPORT_MACHINE_POSITION                   On          //$10 (bit 0)
 #define DEFAULT_REPORT_BUFFER_STATE                       On          //$10 (bit 1)
-#define DEFAULT_REPORT_LINE_NUMBERS                       On          //$10 (bit 2)
-#define DEFAULT_REPORT_CURRENT_FEED_SPEED                 On          //$10 (bit 3)
+#define DEFAULT_REPORT_LINE_NUMBERS                       On          //$10 (bit 2) 
+#define DEFAULT_REPORT_CURRENT_FEED_SPEED                 On          //$10 (bit 3) 
 #define DEFAULT_REPORT_PIN_STATE                          On          //$10 (bit 4)
 #define DEFAULT_REPORT_WORK_COORD_OFFSET                  On          //$10 (bit 5)
 #define DEFAULT_REPORT_OVERRIDES                          On          //$10 (bit 6)
@@ -69,9 +47,9 @@
 #define DEFAULT_SOFT_LIMIT_ENABLE                         On          //$20
 #define DEFAULT_HARD_LIMIT_ENABLE                         On          //$21
 #define DEFAULT_HOMING_ENABLE                             On          //$22 (bit 0)
-#define DEFAULT_HOMING_SINGLE_AXIS_COMMANDS              Off          //$22 (bit 1)
+#define HOMING_SINGLE_AXIS_COMMANDS                      Off          //$22 (bit 1)
 #define DEFAULT_HOMING_INIT_LOCK                          On          //$22 (bit 2)
-#define DEFAULT_HOMING_FORCE_SET_ORIGIN                  Off          //$22 (bit 3)
+#define HOMING_FORCE_SET_ORIGIN                          Off          //$22 (bit 3)
 #define DEFAULT_LIMITS_TWO_SWITCHES_ON_AXES              Off          //$22 (bit 4)
 #define DEFAULT_HOMING_ALLOW_MANUAL                       On          //$22 (bit 5)
 #define DEFAULT_HOMING_OVERRIDE_LOCKS                     On          //$22 (bit 6)
@@ -125,10 +103,10 @@
 #define DEFAULT_Y_MAX_RATE                            600.0f          //$111
 #define DEFAULT_Z_MAX_RATE                            400.0f          //$112
 #define DEFAULT_A_MAX_RATE           (1.0f * 360.0f * 60.0f)          //$113
-#define DEFAULT_X_ACCELERATION                         12.0f          //$120
-#define DEFAULT_Y_ACCELERATION                         12.0f          //$121
-#define DEFAULT_Z_ACCELERATION                         10.0f          //$122
-#define DEFAULT_A_ACCELERATION                        180.0f          //$123
+#define DEFAULT_X_ACCELERATION       (12.0f * 60.0f * 60.0f)          //$120
+#define DEFAULT_Y_ACCELERATION       (12.0f * 60.0f * 60.0f)          //$121
+#define DEFAULT_Z_ACCELERATION       (10.0f * 60.0f * 60.0f)          //$122
+#define DEFAULT_A_ACCELERATION      (180.0f * 60.0f * 60.0f)          //$123
 #define DEFAULT_X_MAX_TRAVEL                          360.0f          //$130
 #define DEFAULT_Y_MAX_TRAVEL                          233.0f          //$131
 #define DEFAULT_Z_MAX_TRAVEL                           90.0f          //$132
@@ -145,10 +123,3 @@
 #define DEFAULT_PLANNER_BUFFER_BLOCKS                     35          //$398
 #define DEFAULT_AUTOREPORT_INTERVAL                        0          //$481
 #define DEFAULT_TIMEZONE_OFFSET                         0.0f          //$482
-```
-
-Плата прошивается выбрав в PlatformIO окружение `env:blackpill_f401cc_uni`. 
-Дополнительно выбирать плату в файле `..\Inc\my_machine.h` не требуется, оригинальный файл настроек PlatformIO
-перезапишет плату исходя из выбранного окружения.
-После прошивки и запуска GRBL стираем и восстанавливает настройки до значений по умолчанию командой `$RST=$`.
-Проверяем настройки командой `$$`.

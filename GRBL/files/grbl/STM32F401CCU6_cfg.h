@@ -47,9 +47,9 @@
 #define DEFAULT_SOFT_LIMIT_ENABLE                         On          //$20
 #define DEFAULT_HARD_LIMIT_ENABLE                         On          //$21
 #define DEFAULT_HOMING_ENABLE                             On          //$22 (bit 0)
-#define HOMING_SINGLE_AXIS_COMMANDS                      Off          //$22 (bit 1)
+#define DEFAULT_HOMING_SINGLE_AXIS_COMMANDS              Off          //$22 (bit 1)
 #define DEFAULT_HOMING_INIT_LOCK                          On          //$22 (bit 2)
-#define HOMING_FORCE_SET_ORIGIN                          Off          //$22 (bit 3)
+#define DEFAULT_HOMING_FORCE_SET_ORIGIN                  Off          //$22 (bit 3)
 #define DEFAULT_LIMITS_TWO_SWITCHES_ON_AXES              Off          //$22 (bit 4)
 #define DEFAULT_HOMING_ALLOW_MANUAL                       On          //$22 (bit 5)
 #define DEFAULT_HOMING_OVERRIDE_LOCKS                     On          //$22 (bit 6)
@@ -103,10 +103,10 @@
 #define DEFAULT_Y_MAX_RATE                            600.0f          //$111
 #define DEFAULT_Z_MAX_RATE                            400.0f          //$112
 #define DEFAULT_A_MAX_RATE           (1.0f * 360.0f * 60.0f)          //$113
-#define DEFAULT_X_ACCELERATION       (12.0f * 60.0f * 60.0f)          //$120
-#define DEFAULT_Y_ACCELERATION       (12.0f * 60.0f * 60.0f)          //$121
-#define DEFAULT_Z_ACCELERATION       (10.0f * 60.0f * 60.0f)          //$122
-#define DEFAULT_A_ACCELERATION      (180.0f * 60.0f * 60.0f)          //$123
+#define DEFAULT_X_ACCELERATION                         12.0f          //$120
+#define DEFAULT_Y_ACCELERATION                         12.0f          //$121
+#define DEFAULT_Z_ACCELERATION                         10.0f          //$122
+#define DEFAULT_A_ACCELERATION                        180.0f          //$123
 #define DEFAULT_X_MAX_TRAVEL                          360.0f          //$130
 #define DEFAULT_Y_MAX_TRAVEL                          233.0f          //$131
 #define DEFAULT_Z_MAX_TRAVEL                           90.0f          //$132
